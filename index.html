@@ -5,63 +5,89 @@
 <title>Survey Form</title>
 <style>
 body {
-font-family: Arial, sans-serif;
-background: #f2f4f8;
-padding: 20px;
-max-width: 700px;
-margin: auto;
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
 }
 h1 {
-text-align: center;
+  text-align: center;
 }
 form {
-background: #ffffff;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 label {
-display: block;
-margin-top: 15px;
-font-weight: bold;
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
 }
 input, select, textarea {
-width: 100%;
-padding: 10px;
-margin-top: 6px;
-border: 1px solid #ccc;
-border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 textarea {
-resize: vertical;
+  resize: vertical;
 }
 button {
-margin-top: 20px;
-width: 100%;
-padding: 12px;
-background: #4CAF50;
-color: white;
-border: none;
-border-radius: 4px;
-font-size: 16px;
-cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
 }
 button:hover {
-background: #45a049;
+  background: #45a049;
 }
 </style>
 </head>
-
 
 <body>
 <h1 id="title">Customer Experience Survey</h1>
 <p id="description">We value your feedback. Please fill out this short survey to help us improve.</p>
 
+<form id="survey-form">
+  <label id="name-label" for="name">Name:</label>
+  <input type="text" id="name" name="name" placeholder="Enter your full name" required />
 
-    <form id="survey-form">
-    <label id="name-label" for="name">Name:</label>
-    <input
-        type="text"
-        id="name"
-        name="name"/>
+  <label id="email-label" for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+  <label id="number-label" for="number">Age:</label>
+  <input type="number" id="number" name="age" min="1" max="120" placeholder="Enter your age" />
+
+  <label for="dropdown">How did you hear about us?</label>
+  <select id="dropdown" name="source">
+    <option value="social">Social Media</option>
+    <option value="friend">Friend or Family</option>
+    <option value="ads">Advertisements</option>
+  </select>
+
+  <label>Rate your overall satisfaction:</label>
+  <label><input type="radio" name="rating" value="good" /> Good</label>
+  <label><input type="radio" name="rating" value="average" /> Average</label>
+  <label><input type="radio" name="rating" value="poor" /> Poor</label>
+
+  <label>What services do you use? (Check all that apply)</label>
+  <label><input type="checkbox" name="services" value="delivery" /> Delivery</label>
+  <label><input type="checkbox" name="services" value="support" /> Customer Support</label>
+  <label><input type="checkbox" name="services" value="mobile-app" /> Mobile App</label>
+
+  <label for="comments">Additional Comments:</label>
+  <textarea id="comments" name="comments" rows="5" placeholder="Write any suggestions or feedback here..."></textarea>
+
+  <button id="submit" type="submit">Submit</button>
+</form>
+</body>
 </html>
+
